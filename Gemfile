@@ -18,6 +18,7 @@ end
 gem 'thin'
 gem 'pg'
 gem 'haml'
+gem 'bcrypt-ruby'
 
 # jQuery
 gem 'json'
