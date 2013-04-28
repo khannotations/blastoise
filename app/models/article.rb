@@ -5,4 +5,6 @@ class Article < ActiveRecord::Base
   has_many :thoughts, through: :readings
   has_and_belongs_to_many :sources
 
+  attr_accessible :title, :author, :text, :url
+
 end

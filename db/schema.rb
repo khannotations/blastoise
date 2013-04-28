@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427193333) do
+ActiveRecord::Schema.define(:version => 20130428061303) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(:version => 20130427193333) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "articles_readers", :id => false, :force => true do |t|
+    t.integer "article_id"
+    t.integer "curator_id"
+  end
+
+  add_index "articles_readers", ["article_id", "curator_id"], :name => "index_articles_readers_on_article_id_and_curator_id"
+  add_index "articles_readers", ["curator_id", "article_id"], :name => "index_articles_readers_on_curator_id_and_article_id"
+
+  create_table "articles_sources", :id => false, :force => true do |t|
+    t.integer "article_id"
+    t.integer "source_id"
+  end
+
+  add_index "articles_sources", ["article_id", "source_id"], :name => "index_articles_sources_on_article_id_and_source_id"
+  add_index "articles_sources", ["source_id", "article_id"], :name => "index_articles_sources_on_source_id_and_article_id"
 
   create_table "readers", :force => true do |t|
     t.string   "first_name"

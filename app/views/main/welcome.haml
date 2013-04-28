@@ -1,8 +1,8 @@
 %h1 You are not logged in
 
 %form{action: '/login', method: 'post'}
-  %input{type: 'text'}
-  %input{type: 'password'}
+  %input{type: 'text', name: 'email'}
+  %input{type: 'password', name: 'password'}
   %input{type: 'submit', value: 'Go'}
 
 %h1 Sign up
