@@ -1,5 +1,11 @@
-.container
-  %h1= "Hi #{@reader.email}!"
+.container{:"ng-controller" => "MainCtnl"}
+  %h1 NG content
+  %div{class: "ng-view"}
+
+  %h4= "Hi #{@reader.email}!"
+  %form
+    %input{name: 'url', placeholder: 'URL'}
+    %textarea{name: 'body', placeholder: 'Article body'}
 
   %p These are all the readers:
   %ol

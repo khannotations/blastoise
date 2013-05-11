@@ -1,0 +1,17 @@
+<form ng-submit='createArticleFromUrl()' ng-controller='MainCtnl'>
+  <div>
+    <label for='article[url]'>URL:</label>
+    <input type='text' name='article[url]' ng-model='newArticle.url' />
+  </div>
+  <div>
+    <label for='article[text]'>Title:</label>
+    <input type='text' name='article[title]' ng-model='newArticle.title' ng-show='newArticle.title' />
+  </div>
+  <p ng-show='newArticle.author'></p>
+  <br>
+  <br>
+  <div ng-show='newArticle.text' ng-bind-html-unsafe="newArticle.text">
+  </div>
+  <span>{{newArticle.url}}</span>
+  <input type='submit' value='go' />
+</form>

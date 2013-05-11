@@ -20,8 +20,11 @@ gem 'pg'
 gem 'haml'
 gem 'bcrypt-ruby'
 
-# jQuery
+# Javascript
+gem 'angularjs-rails'
 gem 'json'
+
+# jQuery
 gem 'jquery-rails'
 
 # Web
@@ -29,7 +32,6 @@ gem 'heroku'
 
 # Style
 gem 'bourbon'
-gem 'bootstrap-sass', '~> 2.2.1.1'
 
 # Misc
 gem 'squeel'

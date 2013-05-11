@@ -5,4 +5,5 @@ Blastoise::Application.routes.draw do
   get '/logout' => 'main#logout'
 
   resources :readers, only: ['create']
+  resources :articles
 end
