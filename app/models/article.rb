@@ -15,7 +15,7 @@ class Article < ActiveRecord::Base
     # f is either a StringIO or a TempFile
     begin 
       return f.string # f is a StringIO
-    rescue Exception => e
+    rescue NoMethodError => e
       p e
       f.rewind
       f.read

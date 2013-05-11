@@ -3,7 +3,9 @@ class ArticlesController < ApplicationController
 
   def index
     if (params[:url] != 'undefined')
-      respond_with Article.query_for_text params[:url]
+      text = Article.query_for_text params[:url]
+      p text
+      respond_with text
     else
       respond_with Article.all
     end
