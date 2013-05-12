@@ -1,3 +1,5 @@
+# Any consumer of content on the site. Is mailed an article / day
+# Also may be a curator.
 class Reader < ActiveRecord::Base
   has_secure_password
 

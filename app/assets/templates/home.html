@@ -1,0 +1,10 @@
+<div ng-controller="MainCtrl">
+  <h1>Hey {{currentUser.first_name}}, welcome to Essayer!</h1>
+  <h4>Here are today's articles: </h4>
+  <ul>
+    <li ng-repeat="article in articles">
+      <b>{{article.title}}<b> by {{article.author}} (url: {{article.url}})
+    </li>
+  </ul>
+  <a href="#/curate">Add an article</a>
+</div>

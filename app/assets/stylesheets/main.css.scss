@@ -1,14 +1,41 @@
 body {
   margin: 0; padding: 0;
-  font-family: 'Lucida Grande', helvetica;
+  font: 12px/15px 'Lucida Grande', helvetica;
 }
-.container {
-  width: 960px;
-  margin: 0 auto;
+li {
+  list-style: none;
 }
 .italic {
   font-style: italic;
 }
 .bold {
   font-weight: bold;
+}
+$header-height: 50px;
+.header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: $header-height;
+  line-height: $header-height;
+  background-color: #eee;
+  li {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    > a {
+      color: #888;
+      text-decoration: none;
+    }
+    &:hover > a {
+      color: #000;
+    }
+  }
+}
+.content {
+  margin-top: $header-height + 50px;
+}
+.container {
+  width: 960px;
+  margin: 0 auto;
 }

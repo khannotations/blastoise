@@ -1,0 +1,29 @@
+<form id='new-article' ng-submit='saveArticle()' ng-controller='CurateCtrl'>
+  <h1>Add a new article</h1>
+  <div>
+    <label for='article[url]'>URL:</label>
+    <input type='url' name='article[url]' size='50' ng-model='newArticle.url' />
+    <!-- <a href="" ng-click="previewArticle()">Preview</a> -->
+    <button ng-click="previewArticle()">{{status}}</button>
+  </div>
+  <div ng-show="newArticle.title">
+    <label for='article[text]'>Title:</label>
+    <span ng-hide="editingTitle">
+      <span class='bold' ng-bind="newArticle.title"></span>
+      <a href="" ng-click="toggleEditTitle()">Edit</a>
+    </span>
+    <span ng-show='editingTitle'>
+      <input type="text" size='70' ng-model="newArticle.title">
+      <a href="" ng-click="toggleEditTitle()">Done</a>
+    </span>
+
+  </div>
+  <div ng-show="newArticle.author">
+    <label for='article[author]'>Author:</label>
+    <span class='italic' ng-hide="editingAuthor" ng-bind="newArticle.author"></span>
+  </div>
+  <h2 ng-show='newArticle.text'>Content:</h2>
+  <div ng-bind-html-unsafe="newArticle.text">
+  </div>
+  <span>{{newArticle.url}}</span>
+</form>

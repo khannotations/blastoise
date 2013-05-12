@@ -1,0 +1,13 @@
+break up by functionality -- what a novel concept!
+
+|- Essayer
+   |- Read
+      |- Browse articles
+      |- Read articles
+         |- Daily article
+         |- Any article
+   |- Curate
+      |- Add an article
+   |- Personal
+      |- Diary
+      |- Preferences

@@ -1,29 +1,14 @@
-.container{:"ng-controller" => "MainCtnl"}
-  %h1 NG content
-  %div{class: "ng-view"}
+.header
+  .container
+    %li
+      Essayer
+    %li
+      %a{href: '/'} Home
+    %li
+      %a{href: '#/curate'} Curate
+    %li
+      %a{href: '/logout'} Logout
 
-  %h4= "Hi #{@reader.email}!"
-  %form
-    %input{name: 'url', placeholder: 'URL'}
-    %textarea{name: 'body', placeholder: 'Article body'}
-
-  %p These are all the readers:
-  %ol
-    - for r in @readers
-      %li= r.email
-
-  %p The articles:
-  %ol
-    - for a in @articles
-      %li
-        = "#{a.title}"
-        %span.italic= "by #{a.author}"
-        - if a.curators.empty?
-          %p.italic No curators :(
-        - else
-          %p Curated by 
-          - for c in a.curators
-            %span.bold= "#{c.email}, "
-
-  %a{href: "/logout"}
-    %button Log out
+.content
+  .container{:"ng-controller" => "MainCtrl"}
+    %div{class: "ng-view"}

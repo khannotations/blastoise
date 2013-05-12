@@ -10,4 +10,8 @@ class ReadersController < ApplicationController
       redirect_to "/welcome"
     end
   end
+
+  def current_user
+    render json: Reader.find_by_id(session[:reader_id])
+  end
 end
